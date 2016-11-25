@@ -3,8 +3,8 @@ import { reduxForm } from 'redux-form'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import Modal from 'core/frontend/components/shared/modal/Modal' //eslint-disable-line
-import TextInput from 'core/frontend/common/inputs/text/TextInput' //eslint-disable-line
+import Modal from 'core/frontend/components/shared/modal/Modal'
+import TextInput from 'core/frontend/common/inputs/text/TextInput'
 import { getMap } from 'core/frontend/plugin/api'
 import * as modalActions from 'core/frontend/actions/modal-actions'
 
@@ -18,7 +18,7 @@ const PrintModal = (props) => {
     <Modal onClose={ onClose }>
       <form onSubmit={ onSubmit }>
         <TextInput label='Zoom' { ...fields.zoom } />
-        <TextInput label='Ratio' { ...fields.ratio } />
+        {/* <TextInput label='Ratio' { ...fields.ratio } /> */}
         <button type='submit'>Print</button>
       </form>
     </Modal>

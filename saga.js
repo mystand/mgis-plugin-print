@@ -14,6 +14,7 @@ function* mapPrint(action) {
   const { zoom, ratio } = action
   const zoomScale = 2 ** (zoom - map.getZoom())
   const config = (yield select(state => state.pluginConfigs.print))
+
   fetch(config.url, {
     headers: {
       Accept: 'application/json',
@@ -28,6 +29,9 @@ function* mapPrint(action) {
       height: canvas.height * zoomScale,
       ratio
     })
+  }).then((response) => {
+    if (!response.ok) throw new Error(response.code)
+    return response
   }).then(response => response.arrayBuffer())
     .then((arrayBuffer) => {
       const binary = R.arrayBufferToBinaryString(arrayBuffer)
