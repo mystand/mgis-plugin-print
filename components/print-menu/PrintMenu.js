@@ -12,7 +12,7 @@ const PrintMenu = (props) => {
   return (
     <Menu
       icon={ print }
-      title={ 'Print' }
+      title={ 'Печать' }
       className={ styles.menu }
       titleClassName={ styles.menuTitle }
       onClick={ onClick }

@@ -17,9 +17,9 @@ const PrintModal = (props) => {
   return (
     <Modal onClose={ onClose }>
       <form onSubmit={ onSubmit }>
-        <TextInput label='Zoom' { ...fields.zoom } />
+        <TextInput label='Масштаб' { ...fields.zoom } />
         {/* <TextInput label='Ratio' { ...fields.ratio } /> */}
-        <button type='submit'>Print</button>
+        <button type='submit'>Печать</button>
       </form>
     </Modal>
   )
